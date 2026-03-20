@@ -1,0 +1,288 @@
+/* color scheme */
+:root,
+[data-bs-theme=light] {
+  --my-bg-color: #86B2AF;
+  --my-active-bg-color: #2F514D;
+  --my-hover-bg-color: #546f6c;
+  --my-hover-border-color: #d3a771;
+  --my-active-border-color: #CD8A36;
+  --my-dark-color: #CD8A36;
+  --my-light-color: #000000;
+  --my-active-color: #ffffffdd;
+  --my-hover-color: #ffffffdd;
+}
+
+[data-bs-theme=dark] {
+  --my-bg-color: #2F514D;
+  --my-light-color: #ffffffdd;
+  --my-active-bg-color: #0e2522;
+}
+
+
+/* .f-roboto {
+  font-family: "Roboto";
+} */
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+  /* font-family: "Roboto"; */
+}
+
+body {
+  padding-top: 4.5rem;
+  overflow-y: scroll;
+}
+
+/* #0e2522 */
+[data-bs-theme=dark]
+body {
+  background-color: #0e2522;
+}
+
+nav {
+  background-color: var(--my-bg-color);
+}
+
+.gdpr {
+  font-size: 10px;
+}
+
+.gdpr h2 {
+  font-size: 14px;
+}
+
+.gdpr h3 {
+  font-size: 12px;
+}
+
+
+
+.my-logo {
+  width: auto;
+  height: 32px;
+}
+
+.header-img {
+  max-width: 960px;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.intro-container {
+  max-width: 720px;
+}
+
+.navbar-brand {
+  color: var(--my-active-color);
+}
+
+.prog {
+  color: var(--my-dark-color);
+  font-weight: bold;
+}
+
+.conf-text {
+  font-size: 18px;
+}
+
+.stats {
+  font-size: 22px;
+  color: var(--my-dark-color);
+  font-weight: bold;
+}
+
+.navbar-nav {
+  --bs-nav-link-color: var(--my-light-color);
+  --bs-navbar-active-color: var(--my-active-color);
+  --bs-navbar-hover-color: var(--my-hover-color);
+}
+
+.accordion {
+  --bs-accordion-btn-bg: var(--my-bg-color);
+  --bs-accordion-btn-color: var(--my-light-color);
+  --bs-accordion-active-bg: var(--my-active-bg-color);
+  --bs-accordion-active-color: var(--my-active-color);
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+[data-bs-theme=dark]
+.accordion-button::after{
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+
+.accordion-button:hover {
+  background-color: var(--my-hover-bg-color);
+  color: var(--my-hover-color);
+}
+
+.btn-bbb {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--my-bg-color);
+  --bs-btn-border-color: var(--my-bg-color);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--my-hover-bg-color);
+  --bs-btn-hover-border-color: var(--my-hover-border-color);
+  --bs-btn-focus-shadow-rgb: var(--my-hover-border-color);
+  /* --bs-btn-active-color: var(--bs-btn-hover-color); */
+  --bs-btn-active-bg: var(--my-active-bg-color);
+  --bs-btn-active-border-color: var(--my-active-border-color);
+  --bs-btn-active-color: var(--bs-white);
+}
+
+.bg-active {
+  background-color: var(--my-active-bg-color);
+}
+
+.border-transparent {
+  border-color: transparent !important;
+}
+
+.border-grey {
+  border-color: var(--my-bg-color) !important;
+}
+
+.border-my-dark {
+  border-color: var(--my-dark-color) !important;
+}
+
+.border-hover:hover {
+  border-color: var(--my-hover-border-color) !important;
+  background-color: var(--my-hover-bg-color);
+}
+
+.profile-img {
+  max-width: 60px;
+}
+
+.card {
+  background-color: var(--my-bg-color);
+}
+
+.card-title {
+  color: var(--my-light-color);
+}
+
+.sponsor-img1 {
+  max-height: 70px;
+}
+
+.sponsor-img2 {
+  max-height: 120px;
+}
+
+#map {
+   height: 400px;
+}
+ 
+.hotel-icon-orange {
+  color: #f26633;
+}
+
+.hotel-icon-green {
+  color: #07a400;
+}
+
+.hotel-icon-blue {
+  color: #003b56;
+}
+
+.dropdown-item.active {
+  background-color: var(--my-active-bg-color);
+}
+
+.dropdown-item:hover {
+  background-color: var(--my-hover-bg-color);
+}
+
+/* default settings */
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: #0000001a;
+  border: solid rgba(0, 0, 0, 0.15);
+  border-width: 1px 0;
+  box-shadow:
+    inset 0 0.5em 1.5em #0000001a,
+    inset 0 0.125em 0.5em #00000026;
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: var(--my-bg-color);
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+  --bs-border-radius: 0;
+  --bs-border-width: 4px;
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--my-hover-bg-color);
+  --bs-btn-hover-border-color: var(--my-hover-border-color);
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: var(--my-active-bg-color);
+  --bs-btn-active-border-color: var(--my-dark-color);
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .bi {
+  width: 1em;
+  height: 1em;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}

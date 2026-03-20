@@ -1,25 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100" data-bs-theme="auto">
 
 <head>
-  <meta charset="utf-8" />
-  <!-- TODO: fill correctly -->
-  <meta property="og:title" content="BBB mini-symposium 2026" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="" />
-  <meta property="og:url" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The 8th Blood Brain Barrier Mini Symposium" />
-  <meta name="author" content="" />
-  <meta name="theme-color" content="#7c7c7c" />
-  <title>BBB - 2026 · Index</title>
+    <meta charset="utf-8" />
+    <meta property="og:title" content="8th BBB mini-symposium 2026" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://bbbminisymp-szeged2026.org/images/8th-BBB-MINI-SYMPOSIUM-header_final.png" />
+    <meta property="og:url" content="https://bbbminisymp-szeged2026.org/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="The 8th Blood Brain Barrier Mini Symposium" />
+    <meta name="author" content="Fruzsina Walter" />
+    <meta name="theme-color" content="#546f6c" />
+    <title>BBB - 2026 · Index</title>
+
+    <script src="./assets/dist/js/color-modes.js"></script>
+    <script src="./assets/dist/js/text-conversion.js" defer></script>
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link href="./assets/dist/css/bbb.css" rel="stylesheet" />
+    <link rel="icon" href="./assets/icons/favicon.ico">
 </head>
 
 <body class="d-flex flex-column h-100">
-<main>
-  <h1>8th BBB Mini Symposium Hungary - 2026</h1>
-  <h2><em>Coming soon..</em></h2>
-</main>
+
+    <svg xmlns="https://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+        <path
+            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z">
+        </path>
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z">
+        </path>
+        <path
+            d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z">
+        </path>
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+            d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z">
+        </path>
+    </symbol>
+</svg>
+<div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center border border-0" id="bd-theme"
+        type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+            <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+                aria-pressed="false">
+                <svg class="bi me-2 opacity-50" aria-hidden="true">
+                    <use href="#sun-fill"></use>
+                </svg>
+                Light
+                <svg class="bi ms-auto d-none" aria-hidden="true">
+                    <use href="#check2"></use>
+                </svg>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+                aria-pressed="false">
+                <svg class="bi me-2 opacity-50" aria-hidden="true">
+                    <use href="#moon-stars-fill"></use>
+                </svg>
+                Dark
+                <svg class="bi ms-auto d-none" aria-hidden="true">
+                    <use href="#check2"></use>
+                </svg>
+            </button>
+        </li>
+        <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+                aria-pressed="true">
+                <svg class="bi me-2 opacity-50" aria-hidden="true">
+                    <use href="#circle-half"></use>
+                </svg>
+                Auto
+                <svg class="bi ms-auto d-none" aria-hidden="true">
+                    <use href="#check2"></use>
+                </svg>
+            </button>
+        </li>
+    </ul>
+</div>
+<header>
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <img class="my-logo px-2" src="./assets/brand/brain_icon_orange.png">
+            <button class="navbar-toggler rounded-pill" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link px-2 border border-3 rounded-pill d-inline-block border-my-dark border-hover bg-active active"
+                            href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 border border-3 rounded-pill d-inline-block border-transparent border-hover"
+                            href="program.html">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 border border-3 rounded-pill d-inline-block border-transparent border-hover"
+                            href="registration.html">Dates and
+                            Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 border border-3 rounded-pill d-inline-block border-transparent border-hover"
+                            href="transportation.html">Access</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 border border-3 rounded-pill d-inline-block border-transparent border-hover"
+                            href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <main class="flex-shrink-0">
+        <div class="mx-auto  header-img">
+    <img src="./images/8th-BBB-MINI-SYMPOSIUM-header_final.png" class="img-fluid pb-4" alt="bbb mini-symposium header image">
+</div>
+<div class="container">
+    <h1 class="intro-container mx-auto text-center fs-2 f-roboto">8<sup>th</sup> Mini-Symposium On The Blood-Brain Barrier<br>
+        „From Basic To Clinical Research”</h1>
+    <h2 class="intro-container mx-auto text-center fs-3 f-roboto">From molecular mechanisms to clinical insight<br>
+        advancing BBB research.</h2>
+    <div class="intro-container mx-auto">
+        <section class="text-left py-4">
+            <p>
+                The „8<sup>th</sup> Mini-Symposium on the Blood–Brain Barrier” brings together researchers from across
+                the BBB
+                field to share ideas, data, and perspectives spanning basic, translational and clinical research. The
+                meeting
+                provides a focused and interactive forum for knowledge exchange.
+            </p>
+            <p>
+                The scientific program covers a broad range of topics, including BBB in aging, glycocalyx, claudin-5
+                regulation,
+                neurodegenerative, infectious, and other CNS diseases, metastasis, neuroimmune interactions, toxicology,
+                and
+                stem cell research. Emerging and innovative approaches such as lab-on-a-chip technologies, brain
+                organoids, BBB
+                protection strategies, brain targeting and neurovascular unit biology will also be featured.
+            </p>
+            <p>
+                By bringing together diverse disciplines and methodologies, the symposium aims to provide a niche for
+                discussion, collaboration, and new directions in BBB research.
+            </p>
+            <p>
+                We warmly welcome you to Szeged and look forward to an inspiring and engaging meeting!
+            </p>
+            <p class="text-end">
+                Maria Deli and Fruzsina Walter<br>
+                and the Biological Barriers<br>
+                and Translation Lab-on-a-Chip Models Research Groups,<br>
+                HUN-REN Biological Research Centre, Szeged, Hungary
+            </p>
+        </section>
+    </div>
+    <section class="text-center pb-4">
+        <h2 class="fs-3">The conference in numbers:</h2>
+        <div class="row justify-content-md-center row-cols-1 row-cols-md-2 conf-text">
+            <div class="col-lg-3"><span class="stats">16</span> oral presentations</div>
+            <div class="col-lg-3"><span class="stats">30</span> poster presentations</div>
+            <div class="col-lg-3"><span class="stats">80+</span> participants</div>
+            <div class="col-lg-3"><span class="stats">10</span> countries</div>
+        </div>
+    </section>
+    <section class="text-center pt-4">
+        <h2 class="fs-3">Sponsors</h2>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-3">
+                    <image class="img-fluid sponsor-img1" src="./assets/brand/hns_t.png">
+                </div>
+                <div class="col-md-3">
+                    <image class="img-fluid sponsor-img2" src="./assets/brand/pcc_t.png">
+                </div>
+                <div class="col-md-3">
+                    <image class="img-fluid sponsor-img1" src="./assets/brand/bp.png">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-body-tertiary">
+    <div class="container">
+    <span class="text-body-secondary">© 2026 - 8<sup>th</sup> BBB Mini Symposium</span>
+    </div>
+</footer>
+
+    <script src="./assets/dist/js/bootstrap.bundle.min.js" class="astro-vvvwv3sm"></script>
 
 </body>
 
