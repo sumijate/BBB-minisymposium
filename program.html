@@ -14,11 +14,12 @@
     <title>BBB - 2026 · Program</title>
 
     <script>
-        const VERSION = "1.0.0"; 
+        const VERSION = "1.0.1"; 
 
         const cssFiles = [
             './assets/dist/css/bootstrap.min.css', 
-            './assets/dist/css/bbb.css'
+            './assets/dist/css/bbb.css',
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
         ];
         
         const jsFiles = [
@@ -40,8 +41,6 @@
             document.head.appendChild(script);
         });
         </script>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <link rel="icon" href="./assets/icons/favicon.ico">
 </head>
