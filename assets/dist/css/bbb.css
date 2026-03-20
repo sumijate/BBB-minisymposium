@@ -44,18 +44,16 @@ nav {
 }
 
 .gdpr {
-  font-size: 10px;
-}
-
-.gdpr h2 {
   font-size: 14px;
 }
 
-.gdpr h3 {
-  font-size: 12px;
+.gdpr h2 {
+  font-size: 18px;
 }
 
-
+.gdpr h3 {
+  font-size: 16px;
+}
 
 .my-logo {
   width: auto;
@@ -158,7 +156,7 @@ nav {
 }
 
 .profile-img {
-  max-width: 60px;
+  max-width: 180px;
 }
 
 .card {
