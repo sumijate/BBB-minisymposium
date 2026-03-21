@@ -14,7 +14,7 @@
     <title>BBB - 2026 · Index</title>
 
     <script>
-        const VERSION = "1.0.2"; 
+        const VERSION = "1.0.4"; 
 
         const cssFiles = [
             './assets/dist/css/bootstrap.min.css', 
@@ -27,18 +27,21 @@
             './assets/dist/js/text-conversion.js'
         ];
 
+        jsFiles.forEach(file => {
+            const script = document.createElement('script');
+            script.src = `${file}?v=${VERSION}`;
+            script.async = false;
+            if(file.includes('text-conversion')){
+                script.defer = true;
+            }
+            document.head.appendChild(script);
+        });
+        
         cssFiles.forEach(file => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
             link.href = `${file}?v=${VERSION}`;
             document.head.appendChild(link);
-        });
-
-        jsFiles.forEach(file => {
-            const script = document.createElement('script');
-            script.src = `${file}?v=${VERSION}`;
-            script.async = false;
-            document.head.appendChild(script);
         });
         </script>
 
@@ -156,7 +159,7 @@
 
     <main class="flex-shrink-0">
         <div class="mx-auto  header-img">
-    <img src="./images/8th-BBB-MINI-SYMPOSIUM-header_final.webp" class="img-fluid pb-4" alt="bbb mini-symposium header image">
+    <img src="./images/8th-BBB-MINI-SYMPOSIUM-header.webp" class="img-fluid pb-4" alt="bbb mini-symposium header image">
 </div>
 <div class="container">
     <h1 class="intro-container mx-auto text-center fs-2 f-roboto">8<sup>th</sup> Mini-Symposium On The Blood-Brain Barrier<br>

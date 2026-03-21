@@ -14,7 +14,7 @@
     <title>BBB - 2026 · Transportation</title>
 
     <script>
-        const VERSION = "1.0.2"; 
+        const VERSION = "1.0.4"; 
 
         const cssFiles = [
             './assets/dist/css/bootstrap.min.css', 
@@ -27,18 +27,21 @@
             './assets/dist/js/text-conversion.js'
         ];
 
+        jsFiles.forEach(file => {
+            const script = document.createElement('script');
+            script.src = `${file}?v=${VERSION}`;
+            script.async = false;
+            if(file.includes('text-conversion')){
+                script.defer = true;
+            }
+            document.head.appendChild(script);
+        });
+        
         cssFiles.forEach(file => {
             const link = document.createElement('link');
             link.rel = 'stylesheet';
             link.href = `${file}?v=${VERSION}`;
             document.head.appendChild(link);
-        });
-
-        jsFiles.forEach(file => {
-            const script = document.createElement('script');
-            script.src = `${file}?v=${VERSION}`;
-            script.async = false;
-            document.head.appendChild(script);
         });
         </script>
 
@@ -179,7 +182,7 @@
     <h2 class="fs-3">Accommodation</h2>
     
     <h3 class="fs-5 mb-0">Hunguest Hotel Forrás</h3>
-    <p class="pb-1"><a href="https://www.hunguesthotels.hu/hu/hotel/szeged/hunguest_hotel_szeged/hotel_szeged" rel="noopener noreferrer" target="_blank">https://www.hunguesthotels.hu/<br>hu/hotel/szeged/hunguest_hotel_szeged/hotel_szeged/</a></p>
+    <p class="pb-1"><a href="https://www.hunguesthotels.hu/hu/hotel/szeged/hunguest_hotel_szeged/hotel_szeged" rel="noopener noreferrer" target="_blank">https://www.hunguesthotels.hu/hu/hotel/<wbr>szeged/hunguest_hotel_szeged/<wbr>hotel_szeged/</a></p>
     <h3 class="fs-5 mb-0">Art Hotel</h3>
     <p class="pb-1"><a href="https://artszeged.accenthotels.com/en" rel="noopener noreferrer" target="_blank">https://artszeged.accenthotels.com/en</a></p>
     <h3 class="fs-5 mb-0">Science Hotel</h3>
